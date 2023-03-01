@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import ListNotification
 
-# Register your models here.
+class ListListNotification(admin.ModelAdmin):
+    list_display = ('description','stats', 'hour')
+
+admin.site.register(ListNotification, ListListNotification)
