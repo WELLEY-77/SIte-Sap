@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+class ListNotification(models.Model):
+    description = models.CharField('Descrição', max_length=50)
+    stats = models.CharField('Estatos', max_length=20)
+    hour = models.IntegerField('Horas')
