@@ -34,15 +34,20 @@
                     <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-overflow">
                         <h2 class="tm-block-title">Lista de Notificação</h2>
                         <div class="tm-notification-items">
+                            {% if lista_notificacao %}
+                            {% for item in lista_notificacao  %}
                             <div class="media tm-notification-item">
                                 <div class="tm-gray-circle"><img src="{% static 'dashboard/images/user-1.png' %}" alt="Avatar Image"
                                         class="rounded-circle"></div>
                                 <div class="media-body">
-                                    <p class="mb-2">Jessica e 6 outros enviaram novos produtos: <a href="#"
-                                            class="tm-notification-link">produto atualizado</a></p>
-                                    <span class="tm-small tm-text-color-secondary">5h atrás.</span>
+                                    <p class="mb-2">{{ item.description }}<a href="#"
+                                            class="tm-notification-link">{{ item.stats }}</a></p>
+                                    <span class="tm-small tm-text-color-secondary">{{item.hour}}h atrás.</span>
                                 </div>
                             </div>
+                            {% endfor %}
+                            {% else %}
+                            {% endif %}
                         </div>
                     </div>
                 </div>
