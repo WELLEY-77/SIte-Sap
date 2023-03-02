@@ -67,17 +67,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for item in lista_pedidos %}
                                 <tr>
-                                    <th scope="row"><b>#122349</b></th>
+                                    <th scope="row"><b>#{{item.num_pedido}}</b></th>
                                     <td>
-                                        Moving
+                                        {{ item.status }}
                                     </td>
-                                    <td><b>Oliver Trag</b></td>
-                                    <td><b>São Paulo, SP</b></td>
-                                    <td><b>485 km</b></td>
-                                    <td>16:00, 12 NOV 2022</td>
-                                    <td>08:00, 18 NOV 2022</td>
+                                    <td><b>{{item.operacao}}</b></td>
+                                    <td><b>{{ item.location }}</b></td>
+                                    <td><b>{{ item.distacia }} km</b></td>
+                                    <td>{{ item.date }}</td>
+                                    <td>{{ item.endereco }}</td>
                                 </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
