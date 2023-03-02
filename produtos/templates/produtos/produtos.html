@@ -63,15 +63,16 @@
           <div class="tm-product-table-container">
             <table class="table tm-table-small tm-product-table">
               <tbody>
+                {% for item in cate_produtos %}
                 <tr>
-                  <td class="tm-product-name">Categoria do Produto 1</td>
+                  <td class="tm-product-name">{{ item.categoria }}</td>
                   <td class="text-center">
                     <a href="#" class="tm-product-delete-link">
                       <i class="far fa-trash-alt tm-product-delete-icon"></i>
                     </a>
                   </td>
                 </tr>
-                
+                {% endfor %}
               </tbody>
             </table>
           </div>

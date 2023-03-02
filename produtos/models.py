@@ -8,3 +8,7 @@ class ListProdutos(models.Model):
 
     def __str__(self):
         return f'{self.name}'
+
+
+class CateProdutos(models.Model):
+    categoria = models.CharField('Categoria', max_length=50)
