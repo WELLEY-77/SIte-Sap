@@ -33,19 +33,20 @@
                 </tr>
               </thead>
               <tbody>
+                {% for item in produtos %}
                 <tr>
                   <th scope="row"><input type="checkbox" /></th>
-                  <td class="tm-product-name">Lorem Protuto 1</td>
-                  <td>1,450</td>
-                  <td>550</td>
-                  <td>28 March 2019</td>
+                  <td class="tm-product-name">{{ item.name }}</td>
+                  <td>{{ item.unidade }}</td>
+                  <td>{{ item.em_estoque }}</td>
+                  <td>{{ item.date }}</td>
                   <td>
                     <a href="#" class="tm-product-delete-link">
                       <i class="far fa-trash-alt tm-product-delete-icon"></i>
                     </a>
                   </td>
                 </tr>
-                
+                {% endfor %}
               </tbody>
             </table>
           </div>
